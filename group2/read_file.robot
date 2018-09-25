@@ -16,12 +16,12 @@ Try to write dictionary data to csv file
 
 
 
-# Try to write dictionary data to csv file
-#         [Tags]         testing
-#        &{user_info}=   Create Dictionary
-#        ...	           email=somkiat@gmail.com
-#        ...             mobile_no=091312312312
-#        Write Data      ${user_info}
+Try to write dictionary data to csv file
+        [Tags]         testing
+       &{user_info}=   Create Dictionary
+       ...	           email=somkiat@gmail.com
+       ...             mobile_no=091312312312
+       Write Data      ${user_info}
 
 Try to read from user.csv with for loop
 
