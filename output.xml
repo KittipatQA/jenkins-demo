@@ -1,146 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180924 22:32:16.138" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
-<suite source="d:\AdvanceRobot\upload.robot" id="s1" name="Upload">
-<test id="s1-t1" name="อัพโหลด">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the given ``url``.</doc>
+<robot generated="20180925 11:48:23.818" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="d:\AdvanceRobot\read_file.robot" id="s1" name="Read File">
+<test id="s1-t1" name="Try to write dictionary data to csv file">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
 <arguments>
-<arg>${url}</arg>
-<arg>Chrome</arg>
+<arg>email=somkiat@gmail.com</arg>
+<arg>mobile_no=083123123123</arg>
 </arguments>
-<msg timestamp="20180924 22:32:16.366" level="INFO">Opening browser 'Chrome' to base url 'http://nervgh.github.io/pages/angular-file-upload/examples/simple/'.</msg>
-<status status="PASS" endtime="20180924 22:32:20.245" starttime="20180924 22:32:16.365"></status>
+<assign>
+<var>&amp;{user_info}</var>
+</assign>
+<msg timestamp="20180925 11:48:23.834" level="INFO">&amp;{user_info} = { email=somkiat@gmail.com | mobile_no=083123123123 }</msg>
+<status status="PASS" endtime="20180925 11:48:23.834" starttime="20180925 11:48:23.834"></status>
 </kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180924 22:32:21.375" starttime="20180924 22:32:20.246"></status>
-</kw>
-<kw name="Select File">
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
 <arguments>
-<arg>loan.jpg</arg>
+<arg>${user_info}</arg>
+<arg>${user_info}</arg>
 </arguments>
-<kw name="Choose File" library="SeleniumLibrary">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<assign>
+<var>@{all data}</var>
+</assign>
+<msg timestamp="20180925 11:48:23.834" level="INFO">@{all data} = [ {u'email': u'somkiat@gmail.com', u'mobile_no': u'083123123123'} | {u'email': u'somkiat@gmail.com', u'mobile_no': u'083123123123'} ]</msg>
+<status status="PASS" endtime="20180925 11:48:23.834" starttime="20180925 11:48:23.834"></status>
+</kw>
+<kw name="Write Data" library="CsvLibrary">
 <arguments>
-<arg>xpath://input[2]</arg>
-<arg>d:\\AdvanceRobot/${filename}</arg>
+<arg>${all data}</arg>
 </arguments>
-<status status="PASS" endtime="20180924 22:32:21.449" starttime="20180924 22:32:21.376"></status>
+<status status="PASS" endtime="20180925 11:48:23.834" starttime="20180925 11:48:23.834"></status>
 </kw>
-<status status="PASS" endtime="20180924 22:32:21.449" starttime="20180924 22:32:21.376"></status>
-</kw>
-<kw name="Select File">
-<arguments>
-<arg>investment.jpg</arg>
-</arguments>
-<kw name="Choose File" library="SeleniumLibrary">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>xpath://input[2]</arg>
-<arg>d:\\AdvanceRobot/${filename}</arg>
-</arguments>
-<status status="PASS" endtime="20180924 22:32:21.488" starttime="20180924 22:32:21.450"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:21.488" starttime="20180924 22:32:21.450"></status>
-</kw>
-<kw name="Select File">
-<arguments>
-<arg>account.jpg</arg>
-</arguments>
-<kw name="Choose File" library="SeleniumLibrary">
-<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
-<arguments>
-<arg>xpath://input[2]</arg>
-<arg>d:\\AdvanceRobot/${filename}</arg>
-</arguments>
-<status status="PASS" endtime="20180924 22:32:21.527" starttime="20180924 22:32:21.489"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:21.527" starttime="20180924 22:32:21.489"></status>
-</kw>
-<kw name="Selected file should have 3 files">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr</arg>
-</arguments>
-<status status="PASS" endtime="20180924 22:32:21.551" starttime="20180924 22:32:21.529"></status>
-</kw>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<arguments>
-<arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr</arg>
-<arg>limit=3</arg>
-</arguments>
-<msg timestamp="20180924 22:32:21.565" level="INFO">Current page contains 3 element(s).</msg>
-<status status="PASS" endtime="20180924 22:32:21.566" starttime="20180924 22:32:21.551"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:21.566" starttime="20180924 22:32:21.528"></status>
-</kw>
-<kw name="Upload File">
-<arguments>
-<arg>1</arg>
-</arguments>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[${order no}]/td[5]/button[1]</arg>
-</arguments>
-<msg timestamp="20180924 22:32:21.567" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[1]/td[5]/button[1]'.</msg>
-<status status="PASS" endtime="20180924 22:32:21.667" starttime="20180924 22:32:21.566"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:21.667" starttime="20180924 22:32:21.566"></status>
-</kw>
-<kw name="Upload File">
-<arguments>
-<arg>2</arg>
-</arguments>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[${order no}]/td[5]/button[1]</arg>
-</arguments>
-<msg timestamp="20180924 22:32:21.669" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[2]/td[5]/button[1]'.</msg>
-<status status="PASS" endtime="20180924 22:32:21.774" starttime="20180924 22:32:21.668"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:21.774" starttime="20180924 22:32:21.668"></status>
-</kw>
-<kw name="Upload File">
-<arguments>
-<arg>3</arg>
-</arguments>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[${order no}]/td[5]/button[1]</arg>
-</arguments>
-<msg timestamp="20180924 22:32:21.778" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[3]/td[5]/button[1]'.</msg>
-<status status="PASS" endtime="20180924 22:32:21.929" starttime="20180924 22:32:21.778"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:21.930" starttime="20180924 22:32:21.775"></status>
-</kw>
-<kw name="Upload Should Be Success">
-<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` appears on current page.</doc>
-<arguments>
-<arg>xpath://div[@style="width: 100%;"]</arg>
-</arguments>
-<status status="PASS" endtime="20180924 22:32:22.187" starttime="20180924 22:32:21.932"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:22.187" starttime="20180924 22:32:21.932"></status>
-</kw>
-<status status="PASS" endtime="20180924 22:32:22.189" critical="yes" starttime="20180924 22:32:16.363"></status>
+<tags>
+<tag>dev</tag>
+</tags>
+<status status="PASS" endtime="20180925 11:48:23.834" critical="yes" starttime="20180925 11:48:23.834"></status>
 </test>
-<status status="PASS" endtime="20180924 22:32:22.192" starttime="20180924 22:32:16.140"></status>
+<test id="s1-t2" name="Try to read from user.csv with for loop">
+<kw name="Read Data" library="CsvLibrary">
+<arguments>
+<arg>user.Csv</arg>
+</arguments>
+<assign>
+<var>${users}</var>
+</assign>
+<msg timestamp="20180925 11:48:23.849" level="INFO">${users} = [['user1', 'password1'], ['user2', 'password2'], ['user3', 'password3']]</msg>
+<status status="PASS" endtime="20180925 11:48:23.849" starttime="20180925 11:48:23.849"></status>
+</kw>
+<kw type="for" name="${data} IN [ @{users} ]">
+<kw type="foritem" name="${data} = ['user1', 'password1']">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data[0]}=${data[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 11:48:23.851" starttime="20180925 11:48:23.850"></status>
+</kw>
+<status status="PASS" endtime="20180925 11:48:23.851" starttime="20180925 11:48:23.850"></status>
+</kw>
+<kw type="foritem" name="${data} = ['user2', 'password2']">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data[0]}=${data[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 11:48:23.851" starttime="20180925 11:48:23.851"></status>
+</kw>
+<status status="PASS" endtime="20180925 11:48:23.851" starttime="20180925 11:48:23.851"></status>
+</kw>
+<kw type="foritem" name="${data} = ['user3', 'password3']">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data[0]}=${data[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 11:48:23.852" starttime="20180925 11:48:23.852"></status>
+</kw>
+<status status="PASS" endtime="20180925 11:48:23.852" starttime="20180925 11:48:23.851"></status>
+</kw>
+<status status="PASS" endtime="20180925 11:48:23.852" starttime="20180925 11:48:23.850"></status>
+</kw>
+<status status="PASS" endtime="20180925 11:48:23.852" critical="yes" starttime="20180925 11:48:23.834"></status>
+</test>
+<test id="s1-t3" name="Try to read from user.csv">
+<kw name="Read Data" library="CsvLibrary">
+<arguments>
+<arg>user.Csv</arg>
+</arguments>
+<assign>
+<var>${users}</var>
+</assign>
+<msg timestamp="20180925 11:48:23.854" level="INFO">${users} = [['user1', 'password1'], ['user2', 'password2'], ['user3', 'password3']]</msg>
+<status status="PASS" endtime="20180925 11:48:23.854" starttime="20180925 11:48:23.854"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>User=${users[0][0]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 11:48:23.855" starttime="20180925 11:48:23.855"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Password=${users[0][1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 11:48:23.856" starttime="20180925 11:48:23.856"></status>
+</kw>
+<status status="PASS" endtime="20180925 11:48:23.856" critical="yes" starttime="20180925 11:48:23.853"></status>
+</test>
+<status status="PASS" endtime="20180925 11:48:23.857" starttime="20180925 11:48:23.818"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
 </total>
 <tag>
+<stat fail="0" pass="1">dev</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Upload" pass="1">Upload</stat>
+<stat fail="0" id="s1" name="Read File" pass="3">Read File</stat>
 </suite>
 </statistics>
 <errors>
