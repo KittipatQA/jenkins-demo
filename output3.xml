@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180925 13:48:12.327" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<robot generated="20180925 13:52:47.015" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
 <suite source="d:\AdvanceRobot\group3" id="s1" name="Group3">
 <suite source="d:\AdvanceRobot\group3\upload.robot" id="s1-s1" name="Upload">
 <test id="s1-s1-t1" name="อัพโหลด">
@@ -9,12 +9,12 @@
 <arg>${url}</arg>
 <arg>Chrome</arg>
 </arguments>
-<msg timestamp="20180925 13:48:12.477" level="INFO">Opening browser 'Chrome' to base url 'http://nervgh.github.io/pages/angular-file-upload/examples/simple/'.</msg>
-<status status="PASS" endtime="20180925 13:48:15.381" starttime="20180925 13:48:12.476"></status>
+<msg timestamp="20180925 13:52:47.162" level="INFO">Opening browser 'Chrome' to base url 'http://nervgh.github.io/pages/angular-file-upload/examples/simple/'.</msg>
+<status status="PASS" endtime="20180925 13:52:50.096" starttime="20180925 13:52:47.162"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" endtime="20180925 13:48:16.497" starttime="20180925 13:48:15.382"></status>
+<status status="PASS" endtime="20180925 13:52:51.215" starttime="20180925 13:52:50.097"></status>
 </kw>
 <kw name="Select File">
 <arguments>
@@ -26,9 +26,9 @@
 <arg>xpath://input[2]</arg>
 <arg>d:\\AdvanceRobot\\group3/${filename}</arg>
 </arguments>
-<status status="PASS" endtime="20180925 13:48:16.537" starttime="20180925 13:48:16.498"></status>
+<status status="PASS" endtime="20180925 13:52:51.276" starttime="20180925 13:52:51.218"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.537" starttime="20180925 13:48:16.498"></status>
+<status status="PASS" endtime="20180925 13:52:51.276" starttime="20180925 13:52:51.217"></status>
 </kw>
 <kw name="Select File">
 <arguments>
@@ -40,9 +40,9 @@
 <arg>xpath://input[2]</arg>
 <arg>d:\\AdvanceRobot\\group3/${filename}</arg>
 </arguments>
-<status status="PASS" endtime="20180925 13:48:16.566" starttime="20180925 13:48:16.538"></status>
+<status status="PASS" endtime="20180925 13:52:51.307" starttime="20180925 13:52:51.277"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.567" starttime="20180925 13:48:16.538"></status>
+<status status="PASS" endtime="20180925 13:52:51.307" starttime="20180925 13:52:51.276"></status>
 </kw>
 <kw name="Select File">
 <arguments>
@@ -54,9 +54,9 @@
 <arg>xpath://input[2]</arg>
 <arg>d:\\AdvanceRobot\\group3/${filename}</arg>
 </arguments>
-<status status="PASS" endtime="20180925 13:48:16.589" starttime="20180925 13:48:16.568"></status>
+<status status="PASS" endtime="20180925 13:52:51.330" starttime="20180925 13:52:51.308"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.590" starttime="20180925 13:48:16.567"></status>
+<status status="PASS" endtime="20180925 13:52:51.330" starttime="20180925 13:52:51.307"></status>
 </kw>
 <kw name="Selected file should have 3 files">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -64,7 +64,7 @@
 <arguments>
 <arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr</arg>
 </arguments>
-<status status="PASS" endtime="20180925 13:48:16.606" starttime="20180925 13:48:16.591"></status>
+<status status="PASS" endtime="20180925 13:52:51.345" starttime="20180925 13:52:51.330"></status>
 </kw>
 <kw name="Page Should Contain Element" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` is found on the current page.</doc>
@@ -72,10 +72,10 @@
 <arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr</arg>
 <arg>limit=3</arg>
 </arguments>
-<msg timestamp="20180925 13:48:16.614" level="INFO">Current page contains 3 element(s).</msg>
-<status status="PASS" endtime="20180925 13:48:16.614" starttime="20180925 13:48:16.606"></status>
+<msg timestamp="20180925 13:52:51.353" level="INFO">Current page contains 3 element(s).</msg>
+<status status="PASS" endtime="20180925 13:52:51.353" starttime="20180925 13:52:51.345"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.614" starttime="20180925 13:48:16.591"></status>
+<status status="PASS" endtime="20180925 13:52:51.353" starttime="20180925 13:52:51.330"></status>
 </kw>
 <kw name="Upload File">
 <arguments>
@@ -86,10 +86,10 @@
 <arguments>
 <arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[${order no}]/td[5]/button[1]</arg>
 </arguments>
-<msg timestamp="20180925 13:48:16.615" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[1]/td[5]/button[1]'.</msg>
-<status status="PASS" endtime="20180925 13:48:16.671" starttime="20180925 13:48:16.615"></status>
+<msg timestamp="20180925 13:52:51.354" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[1]/td[5]/button[1]'.</msg>
+<status status="PASS" endtime="20180925 13:52:51.410" starttime="20180925 13:52:51.354"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.671" starttime="20180925 13:48:16.615"></status>
+<status status="PASS" endtime="20180925 13:52:51.410" starttime="20180925 13:52:51.354"></status>
 </kw>
 <kw name="Upload File">
 <arguments>
@@ -100,10 +100,10 @@
 <arguments>
 <arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[${order no}]/td[5]/button[1]</arg>
 </arguments>
-<msg timestamp="20180925 13:48:16.672" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[2]/td[5]/button[1]'.</msg>
-<status status="PASS" endtime="20180925 13:48:16.749" starttime="20180925 13:48:16.672"></status>
+<msg timestamp="20180925 13:52:51.411" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[2]/td[5]/button[1]'.</msg>
+<status status="PASS" endtime="20180925 13:52:51.472" starttime="20180925 13:52:51.411"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.750" starttime="20180925 13:48:16.672"></status>
+<status status="PASS" endtime="20180925 13:52:51.472" starttime="20180925 13:52:51.410"></status>
 </kw>
 <kw name="Upload File">
 <arguments>
@@ -114,10 +114,10 @@
 <arguments>
 <arg>xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[${order no}]/td[5]/button[1]</arg>
 </arguments>
-<msg timestamp="20180925 13:48:16.750" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[3]/td[5]/button[1]'.</msg>
-<status status="PASS" endtime="20180925 13:48:16.818" starttime="20180925 13:48:16.750"></status>
+<msg timestamp="20180925 13:52:51.473" level="INFO">Clicking element 'xpath://*[@id="ng-app"]/body/div/div[2]/div[2]/table/tbody/tr[3]/td[5]/button[1]'.</msg>
+<status status="PASS" endtime="20180925 13:52:51.537" starttime="20180925 13:52:51.473"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:16.818" starttime="20180925 13:48:16.750"></status>
+<status status="PASS" endtime="20180925 13:52:51.537" starttime="20180925 13:52:51.473"></status>
 </kw>
 <kw name="Upload Should Be Success">
 <kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
@@ -125,15 +125,15 @@
 <arguments>
 <arg>xpath://div[@style="width: 100%;"]</arg>
 </arguments>
-<status status="PASS" endtime="20180925 13:48:17.051" starttime="20180925 13:48:16.819"></status>
+<status status="PASS" endtime="20180925 13:52:51.759" starttime="20180925 13:52:51.538"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:17.051" starttime="20180925 13:48:16.819"></status>
+<status status="PASS" endtime="20180925 13:52:51.759" starttime="20180925 13:52:51.538"></status>
 </kw>
-<status status="PASS" endtime="20180925 13:48:17.051" critical="yes" starttime="20180925 13:48:12.476"></status>
+<status status="PASS" endtime="20180925 13:52:51.759" critical="yes" starttime="20180925 13:52:47.160"></status>
 </test>
-<status status="PASS" endtime="20180925 13:48:17.053" starttime="20180925 13:48:12.343"></status>
+<status status="PASS" endtime="20180925 13:52:51.761" starttime="20180925 13:52:47.035"></status>
 </suite>
-<status status="PASS" endtime="20180925 13:48:17.054" starttime="20180925 13:48:12.327"></status>
+<status status="PASS" endtime="20180925 13:52:51.763" starttime="20180925 13:52:47.017"></status>
 </suite>
 <statistics>
 <total>
