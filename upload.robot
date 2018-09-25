@@ -4,9 +4,6 @@ Library     SeleniumLibrary
 ***Variable***
 ${url}          http://nervgh.github.io/pages/angular-file-upload/examples/simple/
 
-
-
-
 ***Keywords***
 Select File
     [Arguments]         ${filename}
