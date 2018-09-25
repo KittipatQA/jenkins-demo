@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180925 13:47:45.511" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="d:\AdvanceRobot\group2" id="s1" name="Group2">
+<suite source="d:\AdvanceRobot\group2\DictionaryLocal.robot" id="s1-s1" name="DictionaryLocal">
+<test id="s1-s1-t1" name="Test 1">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>email=somkiat@gmail.com</arg>
+<arg>mobile_no=091312312312</arg>
+</arguments>
+<assign>
+<var>&amp;{user_info}</var>
+</assign>
+<msg timestamp="20180925 13:47:45.544" level="INFO">&amp;{user_info} = { email=somkiat@gmail.com | mobile_no=091312312312 }</msg>
+<status status="PASS" endtime="20180925 13:47:45.544" starttime="20180925 13:47:45.543"></status>
+</kw>
+<kw name="Fill in customer information">
+<arguments>
+<arg>${user_info}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.email}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.545" starttime="20180925 13:47:45.544"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.mobile_no}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.545" starttime="20180925 13:47:45.545"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.546" starttime="20180925 13:47:45.544"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.546" critical="yes" starttime="20180925 13:47:45.543"></status>
+</test>
+<test id="s1-s1-t2" name="Test 2">
+<kw name="Fill in customer information">
+<arguments>
+<arg>${user_info_1}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.email}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.549" starttime="20180925 13:47:45.549"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.mobile_no}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.550" starttime="20180925 13:47:45.550"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.550" starttime="20180925 13:47:45.549"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.550" critical="yes" starttime="20180925 13:47:45.548"></status>
+</test>
+<status status="PASS" endtime="20180925 13:47:45.551" starttime="20180925 13:47:45.540"></status>
+</suite>
+<suite source="d:\AdvanceRobot\group2\read_file.robot" id="s1-s2" name="Read File">
+<test id="s1-s2-t1" name="Try to write dictionary data to csv file">
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>email=ferri</arg>
+<arg>mobile_no=08312312312</arg>
+</arguments>
+<assign>
+<var>&amp;{user_info}</var>
+</assign>
+<msg timestamp="20180925 13:47:45.556" level="INFO">&amp;{user_info} = { email=ferri | mobile_no=08312312312 }</msg>
+<status status="PASS" endtime="20180925 13:47:45.556" starttime="20180925 13:47:45.556"></status>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<arguments>
+<arg>${user_info}</arg>
+<arg>${user_info}</arg>
+</arguments>
+<assign>
+<var>@{all data}</var>
+</assign>
+<msg timestamp="20180925 13:47:45.557" level="INFO">@{all data} = [ {u'email': u'ferri', u'mobile_no': u'08312312312'} | {u'email': u'ferri', u'mobile_no': u'08312312312'} ]</msg>
+<status status="PASS" endtime="20180925 13:47:45.557" starttime="20180925 13:47:45.557"></status>
+</kw>
+<kw name="Write Data" library="CsvLibrary">
+<arguments>
+<arg>${all data}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.560" starttime="20180925 13:47:45.558"></status>
+</kw>
+<tags>
+<tag>dev</tag>
+</tags>
+<status status="PASS" endtime="20180925 13:47:45.561" critical="yes" starttime="20180925 13:47:45.555"></status>
+</test>
+<test id="s1-s2-t2" name="Try to read from user.csv with for loop">
+<kw name="Read Data" library="CsvLibrary">
+<arguments>
+<arg>user.csv</arg>
+</arguments>
+<assign>
+<var>${users}</var>
+</assign>
+<msg timestamp="20180925 13:47:45.563" level="INFO">${users} = [['user1', 'password1'], ['user2', 'password2'], ['user3', 'password3']]</msg>
+<status status="PASS" endtime="20180925 13:47:45.563" starttime="20180925 13:47:45.563"></status>
+</kw>
+<kw type="for" name="${data} IN [ @{users} ]">
+<kw type="foritem" name="${data} = ['user1', 'password1']">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data[0]}=${data[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.564" starttime="20180925 13:47:45.564"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.564" starttime="20180925 13:47:45.563"></status>
+</kw>
+<kw type="foritem" name="${data} = ['user2', 'password2']">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data[0]}=${data[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.565" starttime="20180925 13:47:45.564"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.565" starttime="20180925 13:47:45.564"></status>
+</kw>
+<kw type="foritem" name="${data} = ['user3', 'password3']">
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${data[0]}=${data[1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.566" starttime="20180925 13:47:45.565"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.566" starttime="20180925 13:47:45.565"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.566" starttime="20180925 13:47:45.563"></status>
+</kw>
+<tags>
+<tag>testing</tag>
+</tags>
+<status status="PASS" endtime="20180925 13:47:45.566" critical="yes" starttime="20180925 13:47:45.562"></status>
+</test>
+<test id="s1-s2-t3" name="Try to read from user.csv">
+<kw name="Read Data" library="CsvLibrary">
+<arguments>
+<arg>user.csv</arg>
+</arguments>
+<assign>
+<var>${users}</var>
+</assign>
+<msg timestamp="20180925 13:47:45.567" level="INFO">${users} = [['user1', 'password1'], ['user2', 'password2'], ['user3', 'password3']]</msg>
+<status status="PASS" endtime="20180925 13:47:45.567" starttime="20180925 13:47:45.567"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>User=${users[0][0]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.568" starttime="20180925 13:47:45.568"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Pass=${users[0][1]}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:45.569" starttime="20180925 13:47:45.568"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:45.569" critical="yes" starttime="20180925 13:47:45.567"></status>
+</test>
+<status status="PASS" endtime="20180925 13:47:45.570" starttime="20180925 13:47:45.552"></status>
+</suite>
+<suite source="d:\AdvanceRobot\group2\tax.robot" id="s1-s3" name="Tax">
+<test id="s1-s3-t1" name="ยื่นแบบออนไลน์">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+</arguments>
+<msg timestamp="20180925 13:47:45.699" level="INFO">Opening browser 'Chrome' to base url 'https://rdserver.rd.go.th/publish/index.php'.</msg>
+<status status="PASS" endtime="20180925 13:47:49.088" starttime="20180925 13:47:45.699"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20180925 13:47:50.213" starttime="20180925 13:47:49.089"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${menu}</arg>
+</arguments>
+<msg timestamp="20180925 13:47:50.214" level="INFO">Clicking element '//a[contains(text(),'ยื่นแบบออนไลน์')]'.</msg>
+<status status="PASS" endtime="20180925 13:47:50.523" starttime="20180925 13:47:50.214"></status>
+</kw>
+<kw name="Bypass">
+<kw name="Select Frame" library="SeleniumLibrary">
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<arguments>
+<arg>xpath://*[@id="lightboxdialog"]/p/iframe</arg>
+</arguments>
+<msg timestamp="20180925 13:47:50.523" level="INFO">Selecting frame 'xpath://*[@id="lightboxdialog"]/p/iframe'.</msg>
+<status status="PASS" endtime="20180925 13:47:50.565" starttime="20180925 13:47:50.523"></status>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<doc>Clicks a link identified by ``locator``.</doc>
+<arguments>
+<arg>คลิก</arg>
+</arguments>
+<msg timestamp="20180925 13:47:50.566" level="INFO">Clicking link 'คลิก'.</msg>
+<status status="PASS" endtime="20180925 13:47:50.679" starttime="20180925 13:47:50.565"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.680" starttime="20180925 13:47:50.523"></status>
+</kw>
+<kw name="Window">
+<kw name="Select Window" library="SeleniumLibrary">
+<doc>Selects browser window matching ``locator``.</doc>
+<status status="PASS" endtime="20180925 13:47:50.694" starttime="20180925 13:47:50.681"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="lightboxdialog"]/p/iframe</arg>
+</arguments>
+<msg timestamp="20180925 13:47:50.695" level="INFO">Clicking element 'xpath://*[@id="lightboxdialog"]/p/iframe'.</msg>
+<status status="PASS" endtime="20180925 13:47:50.759" starttime="20180925 13:47:50.694"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.759" starttime="20180925 13:47:50.680"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${close}</arg>
+</arguments>
+<msg timestamp="20180925 13:47:50.760" level="INFO">Clicking element '//button[contains(text(),'.')]'.</msg>
+<status status="PASS" endtime="20180925 13:47:50.836" starttime="20180925 13:47:50.760"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.836" critical="yes" starttime="20180925 13:47:45.698"></status>
+</test>
+<status status="PASS" endtime="20180925 13:47:50.838" starttime="20180925 13:47:45.571"></status>
+</suite>
+<suite source="d:\AdvanceRobot\group2\true.robot" id="s1-s4" name="True">
+<test id="s1-s4-t1" name="Test 1">
+<kw name="Fill in customer information">
+<arguments>
+<arg>${user_info_1}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.email}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:50.847" starttime="20180925 13:47:50.846"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.mobile_no}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:50.848" starttime="20180925 13:47:50.847"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.848" starttime="20180925 13:47:50.846"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.849" critical="yes" starttime="20180925 13:47:50.845"></status>
+</test>
+<test id="s1-s4-t2" name="Test 2">
+<kw name="Fill in customer information">
+<arguments>
+<arg>${user_info_2}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.email}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:50.852" starttime="20180925 13:47:50.851"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${user.mobile_no}</arg>
+</arguments>
+<status status="PASS" endtime="20180925 13:47:50.853" starttime="20180925 13:47:50.852"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.853" starttime="20180925 13:47:50.851"></status>
+</kw>
+<status status="PASS" endtime="20180925 13:47:50.854" critical="yes" starttime="20180925 13:47:50.851"></status>
+</test>
+<status status="PASS" endtime="20180925 13:47:50.856" starttime="20180925 13:47:50.841"></status>
+</suite>
+<status status="PASS" endtime="20180925 13:47:50.859" starttime="20180925 13:47:45.511"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="8">Critical Tests</stat>
+<stat fail="0" pass="8">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">dev</stat>
+<stat fail="0" pass="1">testing</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Group2" pass="8">Group2</stat>
+<stat fail="0" id="s1-s1" name="DictionaryLocal" pass="2">Group2.DictionaryLocal</stat>
+<stat fail="0" id="s1-s2" name="Read File" pass="3">Group2.Read File</stat>
+<stat fail="0" id="s1-s3" name="Tax" pass="1">Group2.Tax</stat>
+<stat fail="0" id="s1-s4" name="True" pass="2">Group2.True</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
